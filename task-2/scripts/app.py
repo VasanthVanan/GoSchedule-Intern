@@ -1,6 +1,6 @@
 # Modules imported 
 
-import mysql.connector, json, os, subprocess, datetime
+import mysql.connector, json, os, subprocess, datetime, dropbox
 from subprocess import Popen, PIPE
 
 # function - to select data
@@ -41,4 +41,7 @@ if __name__ == '__main__':
     p2.communicate()
 
     subprocess.call(["ls","-lha"])
+
+    client = dropbox.client.DropboxClient(<auth_token>)
+    response = client.put_file(filename, f)
 
